@@ -1,0 +1,13 @@
+.kv{
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: grid;
+  background-color: #67946e;
+}
+
+.kv__text {
+  color: #fff;
+  font-size: 120px;
+  font-weight: 700;
+  place-self: center;
+}
