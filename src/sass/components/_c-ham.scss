@@ -1,0 +1,77 @@
+.l-hamburgerWrap{
+  position: fixed;
+  top: 20px;
+  right: 32px;
+}
+
+.p-hamburger {
+	position: relative;
+	display: block;
+	width: 60px;
+	height: 60px;
+	background-color: transparent;
+	border: none;
+	margin-left: auto;
+	z-index: 10;
+}
+
+.p-hamburger__line {
+	display: block;
+	height: 2px;
+	position: absolute;
+	top: 23px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 24px;
+	background-color: #172e59;
+	transition: 0.4s;
+}
+.p-hamburger__line:before,
+.p-hamburger__line:after {
+	content: "";
+	display: block;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	background-color: #172e59;
+	transition: inherit;
+}
+.p-hamburger__line:before {
+	top: -6px;
+}
+.p-hamburger__line:after {
+	top: 6px;
+}
+.p-hamburger__text {
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	width: 100%;
+  text-align: center;
+	transform: translateX(-50%);
+}
+.p-hamburger__text::before {
+	content: "メニュー";
+	text-align: center;
+	color: #172e59;
+	font-size: 10px;
+	font-weight: 900;
+}
+
+.p-hamburger.is-active{
+	.p-hamburger__line {
+		background-color: transparent;
+	}
+	.p-hamburger__line::before {
+		top: 0;
+		transform: rotate(45deg);
+	}
+	.p-hamburger__line::after {
+		top: 0;
+		transform: rotate(-45deg);
+	}
+
+	.p-hamburger__text::before {
+		content: "閉じる";
+	}
+}
