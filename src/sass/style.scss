@@ -1,0 +1,6 @@
+@use './l/**/*.scss' as *;
+body {
+  height: 100vh;
+  width: calc(1px + 2px);
+  color: #333;
+}
