@@ -1,6 +1,8 @@
-@use './foundation/**/*.scss' as *;
-@use './layout/**/*.scss' as *;
-@use './components/**/*.scss' as *;
+@use './global/**/*';
+@use './foundation/**/*';
+@use './mixin/**/*';
+@use './layout/**/*';
+@use './components/**/*';
 
 body {
   color: #333;
@@ -17,12 +19,6 @@ img {
   margin: 80px 0;
 }
 
-.l-inner {
-  width: 100%;
-  max-width: 600px;
-  padding: 0 50px;
-  margin: 0 auto;
-}
 
 h1 {
   font-size: 40px;

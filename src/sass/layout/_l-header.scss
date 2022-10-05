@@ -5,7 +5,27 @@
   right: 0;
 }
 
+.p-header {
+  padding: 12px 0;
+}
+
 .p-header__inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.p-headerNav_list {
+  display: flex;
+}
+
+.p-headerNav__link {
+  padding: 4px 20px;
+  transition: opacity .3s;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
