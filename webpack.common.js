@@ -1,10 +1,6 @@
 const webpackConfig = (MODE) => {
-  // 'production' or 'development'
-  // const MODE = 'development';
   // productionのときはソースマップを利用しない
   const enabledSourceMap = MODE === 'development';
-
-  console.log(MODE);
 
   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
   const CopyPlugin = require('copy-webpack-plugin');
@@ -16,7 +12,6 @@ const webpackConfig = (MODE) => {
     ejs: `${__dirname}/src/ejs/`,
     sass: `${__dirname}/src/sass/`,
   };
-
 
   //ejsビルド
   const entriesHTML = WebpackWatchedGlobEntries.getEntries([`${srcPaths.ejs}**/*.ejs`], {
