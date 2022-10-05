@@ -1,18 +1,21 @@
-@use './global/**/*';
-@use './foundation/**/*';
-@use './mixin/**/*';
-@use './layout/**/*';
-@use './components/**/*';
+@use 'global/**/*' as *;
+@use 'foundation/**/*' as *;
+@use 'layout/**/*' as *;
+@use 'components/**/*' as *;
+
 
 body {
   color: #333;
+
+  @include mq("md") {
+    font-size: vw(strip-unit($inner), 16);
+  }
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
-
 
 
 .sec01{
