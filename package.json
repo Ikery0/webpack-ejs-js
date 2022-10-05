@@ -1,9 +1,8 @@
 {
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
-    "dev": "webpack serve",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack serve --config webpack.dev.js",
+    "watch": "webpack --watch --config webpack.dev.js"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
