@@ -1,9 +1,15 @@
-@use './foundation/**/*.scss' as *;
-@use './layout/**/*.scss' as *;
-@use './components/**/*.scss' as *;
+@use 'global/**/*' as *;
+@use 'foundation/**/*' as *;
+@use 'layout/**/*' as *;
+@use 'components/**/*' as *;
+
 
 body {
   color: #333;
+
+  @include mq("md") {
+    font-size: vw(strip-unit($inner), 16);
+  }
 }
 
 img {
@@ -12,17 +18,10 @@ img {
 }
 
 
-
 .sec01{
   margin: 80px 0;
 }
 
-.l-inner {
-  width: 100%;
-  max-width: 600px;
-  padding: 0 50px;
-  margin: 0 auto;
-}
 
 h1 {
   font-size: 40px;
