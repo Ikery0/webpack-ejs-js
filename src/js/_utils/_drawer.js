@@ -49,7 +49,8 @@ export class Drawer {
     if (this.flg) this.bgFix.on();
     this.DOM.menu.classList.add(this.CLASS);
     this.DOM.hamburger.classList.add(this.CLASS);
-    this.DOM.hamburger.setAttribute('aria-expanded', 'false');
+    this.DOM.hamburger.setAttribute('aria-expanded', 'true');
+    this.DOM.menu.setAttribute('aria-hidden', 'false');
     this.DOM.hamburger.focus();
   }
 
@@ -58,6 +59,7 @@ export class Drawer {
     if (this.flg) this.bgFix.off();
     this.DOM.menu.classList.remove(this.CLASS);
     this.DOM.hamburger.classList.remove(this.CLASS);
-    this.DOM.hamburger.setAttribute('aria-expanded', 'true');
+    this.DOM.hamburger.setAttribute('aria-expanded', 'false');
+    this.DOM.menu.setAttribute('aria-hidden', 'true');
   }
 }
