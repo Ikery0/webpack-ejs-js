@@ -1,1 +1,43 @@
+@use 'sass:math';
+@use '../global/setting' as *;
+@use '../global/function' as *;
 
+html {
+  font-size: 16px;
+
+  //from $inner to lg
+  @media screen and (max-width: $inner) {
+    font-size: vw(strip-unit($inner), 16);
+  }
+
+  @include mq('lg') {
+    font-size: vw($breakLg, 16);
+  }
+
+  @include mq('md') {
+    font-size: 16px;
+  }
+
+  //~375px
+  @media screen and (max-width: 375px) {
+    font-size: vw(375, 16);
+  }
+}
+
+/* pcの電話番号発信対応 */
+a[href^='tel:'] {
+  pointer-events: none;
+  @include mq('md') {
+    pointer-events: auto;
+  }
+}
+
+/* ホバー */
+a {
+  @media (hover: hover) {
+    &:hover {
+      transition: opacity 0.3s;
+      opacity: 0.7;
+    }
+  }
+}

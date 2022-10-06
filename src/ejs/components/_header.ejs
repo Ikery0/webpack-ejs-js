@@ -1,7 +1,7 @@
 <header class="l-header p-header">
   <div class="l-inner p-header__inner">
     <h1 class="p-header__title">TOP</h1>
-    <nav class="p-header__nav">
+    <nav class="p-headerNav">
       <ul class="p-headerNav_list">
         <li class="p-headerNav__items">
           <a href="#sec02" class="p-headerNav__link">sec02</a>
@@ -17,11 +17,23 @@
         </li>
       </ul>
     </nav>
-    <div class="l-hamburgerWrap">
-      <button id="js-hamburger" type="button" class="c-hamburger" aria-controls="navigation" aria-expanded="false">
-        <span class="c-hamburger__line"></span>
-        <span class="c-hamburger__text"></span>
-      </button>
-    </div>
+    <button id="js-hamburger" type="button" class="c-hamburger" aria-controls="navigation" aria-expanded="false">
+      <span class="c-hamburger__line"></span>
+      <span class="c-hamburger__text"></span>
+    </button>
   </div>
 </header>
+
+<div class="l-spMenu js-spNav" id="navigation" aria-hidden="true">
+  <nav class="p-spNav">
+    <ul class="p-spNav__list">
+      <li class="p-spNav__listItems">
+        <a href="/" class="p-spNav__link">Top</a>
+      </li>
+      <li class="p-spNav__listItems">
+        <a href="/about" class="p-spNav__link">ABOUT</a>
+      </li>
+    </ul>
+    <div id="js-navTrap" tabindex="0"></div>
+  </nav>
+</div>
