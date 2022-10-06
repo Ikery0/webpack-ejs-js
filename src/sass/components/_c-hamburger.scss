@@ -1,12 +1,18 @@
+@use '../global/setting' as *;
+
 .c-hamburger {
 	position: relative;
-	display: block;
+	display: none;
 	width: 60px;
 	height: 60px;
 	background-color: transparent;
 	border: none;
 	margin-left: auto;
 	z-index: 10;
+
+	@include mq('lg'){
+		display: block;
+	}
 }
 
 .c-hamburger__line {
