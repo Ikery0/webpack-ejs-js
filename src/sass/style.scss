@@ -6,10 +6,6 @@
 
 body {
   color: #333;
-
-  @include mq("md") {
-    font-size: vw(strip-unit($inner), 16);
-  }
 }
 
 img {

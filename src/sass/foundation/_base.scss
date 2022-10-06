@@ -1,1 +1,25 @@
+@use "sass:math";
+@use '../global/setting' as *;
+@use '../global/function' as *;
 
+html {
+  font-size: 16px;
+
+  //from $inner to lg
+  @media screen and (max-width: $inner) {
+    font-size: vw(strip-unit($inner), 16);
+  }
+
+  @include mq('lg'){
+   font-size: vw(1024, 16);
+  }
+
+  @include mq('md'){
+    font-size: 16px;
+  }
+
+  //~375px
+  @media screen and (max-width: 375px) {
+     font-size: vw(375, 16);
+  }  
+}
