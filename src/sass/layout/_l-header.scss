@@ -1,3 +1,5 @@
+@use '../global/setting' as *;
+
 .l-header {
   position: fixed;
   top: 0;
@@ -15,17 +17,16 @@
   align-items: center;
 }
 
+.p-headerNav {
+  @include mq('lg'){
+    display: none;
+  }
+}
+
 .p-headerNav_list {
   display: flex;
 }
 
 .p-headerNav__link {
-  padding: 4px 20px;
-  transition: opacity .3s;
-
-  @media (hover: hover) {
-    &:hover {
-      opacity: 0.7;
-    }
-  }
+  padding: 8px 20px;
 }
