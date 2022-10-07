@@ -10,15 +10,60 @@
 </head>
 
 <body>
-  <%- include( 'components/_header.ejs' )%>
+  <%- include( 'layouts/_header.ejs' )%>
+  <%- include( 'layouts/_spMenu.ejs' )%>
 
   <div class="kv">
     <p class="kv__text">100vh</p>
   </div>
   <section class="sec01">
     <div class="l-inner">
-      <h1>jQuery Slide</h1>
-      <dl class="p-accordion p-sec01__accordion">
+      <h2>Accordion</h2>
+      <div class="p-accordionWrap">
+        <ul class="p-accordion_list">
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">Q. 質問の内容をここに入れる<span class="p-accordion__icon"></span></summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">Q. 質問の内容をここに入れる<span class="p-accordion__icon"></span></summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">Q. 質問の内容をここに入れる<span class="p-accordion__icon"></span></summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">Q. 質問の内容をここに入れる<span class="p-accordion__icon"></span></summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <!-- <dl class="p-accordion p-sec01__accordion">
         <dt class="p-accordion__Q">
           <button class="p-accordion__QButton js-accoTrigger">
             <span class="p-accordion__Qtext">1. Question01</span>
@@ -49,7 +94,7 @@
           <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
             is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
         </dd>
-      </dl>
+      </dl> -->
     </div>
   </section>
 

@@ -1,6 +1,7 @@
 @use 'global/**/*' as *;
 @use 'foundation/**/*' as *;
 @use 'layout/**/*' as *;
+@use 'project/**/*' as *;
 @use 'components/**/*' as *;
 
 
@@ -20,7 +21,12 @@ img {
 
 
 h1 {
-  font-size: 40px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
   font-weight: 700;
 }
 

@@ -1,0 +1,62 @@
+@use '../global/setting' as *;
+
+.p-accordionWrap {
+  margin-top: 40px;
+}
+
+.p-accordion_list {
+  display: grid;
+  gap: 20px;
+}
+
+.p-accordion__Q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8px;
+  border: solid 1px $black;
+}
+
+.p-accordion__icon {
+  display: block;
+  position: relative;
+  width: 22px;
+  margin-left: 6px;
+  flex-shrink: 0;
+  transform-origin: center 40%;
+  transition: transform 0.4s;
+}
+
+.p-accordion.is-open .p-accordion__icon{
+  transform: rotate(180deg);
+}
+
+.p-accordion__icon::before,
+.p-accordion__icon::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 14px;
+  height: 3px;
+  background-color: $black;
+}
+
+.p-accordion__icon::before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.p-accordion__icon::after {
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+.p-accordion__contentWrap {
+  overflow: hidden;
+}
+
+.p-accordion__contentInner {
+  padding: 24px 40px;
+  background: #ddd;
+}
+

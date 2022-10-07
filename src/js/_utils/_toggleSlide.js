@@ -1,4 +1,8 @@
 'use strict'
+/**
+ *  ex)
+ * new ToggleSlide({ triggers: '.js-accoTrigger', targets: '.js-accoTarget' });
+ */
 //objectにはtriggerとtargetのselectorを渡す
 //ex) const obj = {
 //    triggers: '.js-accoTrigger',
@@ -105,3 +109,4 @@ export class ToggleSlide {
     });
   }
 }
+

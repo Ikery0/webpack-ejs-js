@@ -46,7 +46,7 @@ export class Drawer {
 
   _open() {
     this.flg = true;
-    if (this.flg) this.bgFix.on();
+    this.bgFix.on();
     this.DOM.menu.classList.add(this.CLASS);
     this.DOM.hamburger.classList.add(this.CLASS);
     this.DOM.hamburger.setAttribute('aria-expanded', 'true');
@@ -56,7 +56,7 @@ export class Drawer {
 
   _close() {
     this.flg = false;
-    if (this.flg) this.bgFix.off();
+    this.bgFix.off();
     this.DOM.menu.classList.remove(this.CLASS);
     this.DOM.hamburger.classList.remove(this.CLASS);
     this.DOM.hamburger.setAttribute('aria-expanded', 'false');
