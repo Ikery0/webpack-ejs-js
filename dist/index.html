@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -14,7 +13,7 @@
   <header class="l-header p-header">
   <div class="l-inner p-header__inner">
     <h1 class="p-header__title">TOP</h1>
-    <nav class="p-header__nav">
+    <nav class="p-headerNav">
       <ul class="p-headerNav_list">
         <li class="p-headerNav__items">
           <a href="#sec02" class="p-headerNav__link">sec02</a>
@@ -30,37 +29,97 @@
         </li>
       </ul>
     </nav>
-    <div class="l-hamburgerWrap">
-      <button id="js-hamburger" type="button" class="c-hamburger" aria-controls="navigation" aria-expanded="false">
-        <span class="c-hamburger__line"></span>
-        <span class="c-hamburger__text"></span>
-      </button>
-    </div>
+    <button id="js-hamburger" type="button" class="c-hamburger" aria-controls="navigation" aria-expanded="false">
+      <span class="c-hamburger__line"></span>
+    </button>
   </div>
 </header>
 
-  <div class="l-spMenu js-spNav" id="navigation">
-    <nav class="p-spNav">
-      <ul class="p-spNav__list">
-        <li class="p-spNav__listItems">
-          <a href="/" class="p-spNav__link">Top</a>
-        </li>
-        <li class="p-spNav__listItems">
-          <a href="/about" class="p-spNav__link">ABOUT</a>
-        </li>
-      </ul>
-      <div id="js-navTrap" tabindex="0"></div>
-    </nav>
-  </div>
-
+  <div class="l-spMenu js-spNav" id="navigation" aria-hidden="true">
+  <nav class="p-spNav">
+    <ul class="p-spNav__list">
+      <li class="p-spNav__listItems">
+        <a href="/" class="p-spNav__link">Top</a>
+      </li>
+      <li class="p-spNav__listItems">
+        <a href="/about" class="p-spNav__link">ABOUT</a>
+      </li>
+    </ul>
+    <div id="js-navTrap" tabindex="0"></div>
+  </nav>
+</div>
 
   <div class="kv">
     <p class="kv__text">100vh</p>
   </div>
   <section class="sec01">
     <div class="l-inner">
-      <h1>jQuery Slide</h1>
-      <dl class="p-accordion p-sec01__accordion">
+      <h2>Accordion</h2>
+      <div class="p-accordionWrap">
+        <ul class="p-accordion_list">
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">
+                <span class="p-accordion_QInner">
+                  <span>Q. 質問の内容をここに入れる</span>
+                  <span class="p-accordion__icon"></span>
+                </span>
+              </summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">
+                <span class="p-accordion_QInner">
+                  <span>Q. 質問の内容をここに入れる</span>
+                  <span class="p-accordion__icon"></span>
+                </span>
+              </summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">
+                <span class="p-accordion_QInner">
+                  <span>Q. 質問の内容をここに入れる</span>
+                  <span class="p-accordion__icon"></span>
+                </span>
+              </summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="p-accordion_items">
+            <details class="p-accordion js-details">
+              <summary class="p-accordion__Q js-summary">
+                <span class="p-accordion_QInner">
+                  <span>Q. 質問の内容をここに入れる</span>
+                  <span class="p-accordion__icon"></span>
+                </span>
+              </summary>
+              <div class="p-accordion__contentWrap js-content">
+                <div class="p-accordion__contentInner">
+                  <p>A. 質問の答えをここに入れる</p>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <!-- <dl class="p-accordion p-sec01__accordion">
         <dt class="p-accordion__Q">
           <button class="p-accordion__QButton js-accoTrigger">
             <span class="p-accordion__Qtext">1. Question01</span>
@@ -91,7 +150,7 @@
           <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
             is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
         </dd>
-      </dl>
+      </dl> -->
     </div>
   </section>
 
@@ -114,8 +173,5 @@
   <div class="c-toTop">
     <a href="#" class="c-toTop__text">TOP</a>
   </div>
-
-  <script type="module" src="./main.js"></script>
 </body>
-
 </html>

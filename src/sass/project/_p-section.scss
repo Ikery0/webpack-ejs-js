@@ -1,0 +1,9 @@
+@use '../global/setting' as *;
+
+.p-section {
+  margin-top: rem(120);
+  
+  @include mq('lg'){
+    margin-top: rem(40);
+  }
+}

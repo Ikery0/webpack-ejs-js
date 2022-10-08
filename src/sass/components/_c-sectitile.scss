@@ -1,0 +1,13 @@
+@use '../global/setting' as *;
+
+.c-secTitle {
+  font-weight: 700;
+}
+
+.c-secTitle__en {
+  font-size: rem(32);
+}
+
+.c-secTitle__ja {
+  font-size: rem(12);
+}

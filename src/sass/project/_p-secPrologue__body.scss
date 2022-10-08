@@ -1,0 +1,49 @@
+@use '../global/setting' as *;
+
+.p-secPrologue__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: rem(40);
+
+  @include mq('md'){
+    flex-direction: column;
+  }
+}
+
+.p-secPrologue__img {
+  position: relative;
+  width: 48%;
+
+  @include mq('md'){
+    width: 100%;
+  }
+}
+
+.p-secPrologue__img img {
+  width: 100%;
+}
+
+.p-secPrologue__contents {
+  width: 48%;
+  @include mq('md'){
+    width: 100%;
+    margin-top: rem(24);
+  }
+}
+
+.p-secPrologue__catch {
+  font-size: rem(24);
+  font-weight: 700;
+}
+
+.p-secPrologue__desc {
+  margin-top: rem(24);
+}
+
+.p-secPrologue_btnWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: rem(32);
+}

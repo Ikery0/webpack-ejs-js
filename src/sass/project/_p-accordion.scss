@@ -10,11 +10,14 @@
 }
 
 .p-accordion__Q {
+  padding: 16px 8px;
+  border: solid 1px $black;
+}
+
+.p-accordion_QInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 8px;
-  border: solid 1px $black;
 }
 
 .p-accordion__icon {
