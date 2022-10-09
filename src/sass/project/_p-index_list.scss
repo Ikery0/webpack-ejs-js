@@ -1,0 +1,12 @@
+@use '../global/setting' as *;
+
+.p-index_list {
+  display: grid;
+  gap: 16px;
+  background: #ddd;
+  padding: 40px 20px;
+}
+
+.p-index_items {
+  font-weight: $bold;
+}

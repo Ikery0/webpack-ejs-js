@@ -1,3 +1,5 @@
+@use '../global/setting' as *;
+
 .l-spMenu {
 	position: fixed;
 	top: 0;
@@ -8,57 +10,28 @@
 	visibility: hidden;
 	padding-top: 60px;
 	background-color: #fff;
-	transition: 0.4s;
+	transition: 0.4s ease-out;
 }
 .l-spMenu.is-active {
 	left: 0;
 	visibility: visible;
 }
 .p-spNav {
-	padding-top: 40px;
-	padding-right: 25px;
-	padding-bottom: 120px;
-	padding-left: 25px;
+	padding: 20px 20px;
 }
 
 .p-spNav__listItems {
-  padding-bottom: 20px;
   border-bottom: 2px solid #e7e9ee;
-
-  &:nth-child(n + 2) {
-    margin-top: 20px;
-  }
 }
 
 .p-spNav__link {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: #172e59;
-	font-weight: 900;
-	transition: color 0.4s;
-	font-size: 0.875rem;
-}
-.p-spNav__link.-active::after {
-	transform: translateY(-50%) rotate(-90deg);
-}
-.accordion {
-	height: 0;
-	overflow: hidden;
-	visibility: hidden;
-	transition: 0.4s;
-}
-.accordion.-active {
-	height: auto;
-	padding-top: 30px;
-	visibility: visible;
-}
-.accordion__list li {
-	font-size: 0.75rem;
-}
-.accordion__list li + li {
-	margin-top: 21px;
-}
-.accordion__link {
-	color: #172e59;
+	color: $black;
+	font-size: rem(16);
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 20px 8px;
+	transition: 0.4s ease-out;
 }

@@ -1,6 +1,12 @@
+@use '../global/setting' as *;
+
 .l-inner {
   width: 100%;
-  max-width: 1200px;
-  padding: 0 50px;
+  max-width: 1150px;
+  padding: 0 25px;
   margin: 0 auto;
+  
+  @include mq('md'){
+    padding: 0 15px;
+  }
 }

@@ -1,0 +1,26 @@
+@use '../global//setting' as *;
+
+
+.p-secCards__body {
+  margin-top: 40px;
+}
+
+.p-secCards__cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 rem(-12);
+}
+
+.p-secCards_card {
+  width: 33.333%;
+  padding: 0 rem(12);
+  @include mq('md'){
+    width: 100%;
+  }
+}
+
+.p-secCards_card:nth-child(n + 2) {
+  @include mq('md'){
+    margin-top: rem(24);
+  }
+}
