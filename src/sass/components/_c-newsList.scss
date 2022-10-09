@@ -1,0 +1,53 @@
+@use '../global/setting' as *;
+
+.c-newsList {
+  
+}
+
+.c-newsList__items {
+  border-top: 1px solid #ddd;
+}
+
+.c-newsList__items:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+
+.c-newsList__link {
+  display: flex;
+  flex-wrap: wrap;
+  padding: rem(12) rem(16);
+}
+
+.c-newsList__meta {
+
+}
+
+.c-newsList__date {
+  padding-top: rem(3);
+}
+
+.c-newsList__cat {
+  align-self: flex-start;
+  background: $black;
+  color: $white;
+  font-size: rem(14);
+  text-align: center;
+  border-radius: 999px;
+  padding: rem(4) rem(8);
+  width: rem(96);
+  margin-left: rem(4);
+}
+
+.c-newsList__title {
+  flex: 1;
+  padding-top: rem(3);
+  margin-left: rem(16);
+  
+  @include mq('md'){
+    flex: auto;
+    width: 100%;
+    padding-top: rem(8);
+    margin-left: 0;
+  }
+}

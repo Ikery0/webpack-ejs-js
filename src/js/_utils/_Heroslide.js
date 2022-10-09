@@ -1,10 +1,5 @@
 import Swiper, { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
 
-window.addEventListener('DOMContentLoaded', () => {
-  const heroSlider = new HeroSloder('#js-kvSwiper');
-  heroSlider.start();
-});
-
 export class HeroSloder {
   constructor(el) {
     this.el = el;
@@ -20,7 +15,7 @@ export class HeroSloder {
         crossFade: true,
       },
       loop: true,
-      // loopAdditionalSlides: 1,
+      loopAdditionalSlides: 1,
       speed: 500,
       pagination: {
         el: '.swiper-pagination',
@@ -36,15 +31,19 @@ export class HeroSloder {
     });
   }
 
-  start() {
-    this.swiper.params.autoplay = {
-      delay: 3000,
-      disableOnInteraction: false,
-    };
+  start(options = {}) {
+    options = Object.assign(
+      {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      options,
+    );
+    this.swiper.params.autoplay = options;
     this.swiper.autoplay.start();
   }
 
   stop() {
-    this.swiper.stop();
+    this.swiper.autoplay.stop();
   }
 }

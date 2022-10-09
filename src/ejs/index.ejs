@@ -10,10 +10,7 @@
   </head>
 
   <body>
-    <%- include( 'layouts/_header.ejs' )%> 
-    <%- include( 'layouts/_spMenu.ejs' )%>
-
-    <%- include( 'layouts/_swiper.ejs' )%> 
+    <%- include( 'layouts/_header.ejs' )%> <%- include( 'layouts/_spMenu.ejs' )%> <%- include( 'layouts/_swiper.ejs' )%>
 
     <section class="p-section p-secIndex">
       <div class="l-inner">
@@ -214,11 +211,33 @@
           <h2 class="c-secTitle__en">News</h2>
           <p class="c-secTitle__ja">ニュース</p>
         </div>
+        <div class="p-secNews__body">
+          <ol class="c-newsList">
+            <li class="c-newsList__items">
+              <a href="#news" class="c-newsList__link">
+                <div class="c-newsList__meta">
+                  <time class="c-newsList__date" datetime="2022-01-01">2022.01.01</time>
+                  <span class="c-newsList__cat">お知らせ</span>
+                </div>
+                <h3 class="c-newsList__title">明けましておめでとうございます！</h3>
+              </a>
+            </li>
+            <li class="c-newsList__items">
+              <a href="#news" class="c-newsList__link">
+                <div class="c-newsList__meta">
+                  <time class="c-newsList__date" datetime="2022-01-01">2022.01.01</time>
+                  <span class="c-newsList__cat">お知らせ</span>
+                </div>
+                <h3 class="c-newsList__title">明けましておめでとうございます！明けましておめでとうございます！明けましておめでとうございます！明けましておめでとうございます！</h3>
+              </a>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
     <footer>
-      <p style="font-size: 60px; text-align: center;">フッター</p>
+      <p style="font-size: 60px; text-align: center">フッター</p>
     </footer>
 
     <div class="c-toTop">

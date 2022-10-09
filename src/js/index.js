@@ -22,12 +22,10 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   const so1 = new ScrollObserver('.js-fadeIn', fadeIn, { rootMargin: '-100px 0px -100px 0px' });
 
+
+
   const toggleAnimation = (el, inview) => {
-    if (inview) {
-      console.log(el);
-    } else {
-      console.log(el);
-    }
+    inview ? heroSlider.start() : heroSlider.stop();
   };
   const heroSlider = new HeroSloder('#js-kvSwiper');
   const so2 = new ScrollObserver('#js-kvSwiper', toggleAnimation, { once: false });
