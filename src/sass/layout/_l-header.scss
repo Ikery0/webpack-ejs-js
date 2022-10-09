@@ -19,7 +19,7 @@
 }
 
 .p-headerNav {
-  @include mq('lg'){
+  @include mq('md'){
     display: none;
   }
 }

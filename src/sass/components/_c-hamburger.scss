@@ -10,7 +10,7 @@
 	margin-left: auto;
 	z-index: 10;
 
-	@include mq('lg'){
+	@include mq('md'){
 		display: block;
 	}
 }
