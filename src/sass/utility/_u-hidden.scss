@@ -1,3 +1,5 @@
+@use '../global/setting' as *; 
+
 //768px以上を表示
 .u-desktop {
   display: none;

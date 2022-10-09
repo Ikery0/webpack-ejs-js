@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
 export class HeroSloder {
   constructor(el) {
     this.el = el;
-    this.hero = this._initSwiper();
+    this.swiper = this._initSwiper();
   }
 
   _initSwiper() {
@@ -22,10 +22,6 @@ export class HeroSloder {
       loop: true,
       // loopAdditionalSlides: 1,
       speed: 500,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -41,10 +37,14 @@ export class HeroSloder {
   }
 
   start() {
-    this.hero.start();
+    this.swiper.params.autoplay = {
+      delay: 3000,
+      disableOnInteraction: false,
+    };
+    this.swiper.autoplay.start();
   }
 
   stop() {
-    this.hero.stop();
+    this.swiper.stop();
   }
 }
