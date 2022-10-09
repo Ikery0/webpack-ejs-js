@@ -1,76 +1,247 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script defer src="./assets/js/index.js"></script>
-  <title>webpack-ejs-js</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script defer src="./assets/js/index.js"></script>
+    <title>webpack-ejs-js</title>
+  </head>
 
-<body>
-  <%- include( 'components/_header.ejs' )%>
+  <body>
+    <%- include( 'layouts/_header.ejs' )%> <%- include( 'layouts/_spMenu.ejs' )%> <%- include( 'layouts/_swiper.ejs' )%>
 
-  <div class="kv">
-    <p class="kv__text">100vh</p>
-  </div>
-  <section class="sec01">
-    <div class="l-inner">
-      <h1>jQuery Slide</h1>
-      <dl class="p-accordion p-sec01__accordion">
-        <dt class="p-accordion__Q">
-          <button class="p-accordion__QButton js-accoTrigger">
-            <span class="p-accordion__Qtext">1. Question01</span>
-          </button>
-        </dt>
-        <dd class="p-accordion__A js-accoTarget" aria-hidden="true">
-          <p class="p-accordion__ATitle">Answer</p>
-          <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
-            is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
-        </dd>
-        <dt class="p-accordion__Q">
-          <button class="p-accordion__QButton js-accoTrigger">
-            <span class="p-accordion__Qtext">2. Question02</span>
-          </button>
-        </dt>
-        <dd class="p-accordion__A js-accoTarget" aria-hidden="true">
-          <p class="p-accordion__ATitle">Answer</p>
-          <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
-            is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
-        </dd>
-        <dt class="p-accordion__Q">
-          <button class="p-accordion__QButton js-accoTrigger">
-            <span class="p-accordion__Qtext">3. Question03</span>
-          </button>
-        </dt>
-        <dd class="p-accordion__A js-accoTarget" aria-hidden="true">
-          <p class="p-accordion__ATitle">Answer</p>
-          <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
-            is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
-        </dd>
-      </dl>
-    </div>
-  </section>
+    <section class="p-section p-secIndex">
+      <div class="l-inner">
+        <div class="c-secTitle js-fadeIn">
+          <h2 class="c-secTitle__en">Index</h2>
+          <p class="c-secTitle__ja">目次</p>
+        </div>
+        <div class="p-secIndex_body">
+          <ul class="p-index_list">
+            <li class="p-index_items"><a href="#accordion">・Accordion</a></li>
+            <li class="p-index_items"><a href="#prologue">・Prologue</a></li>
+            <li class="p-index_items"><a href="#cards">・Cards</a></li>
+            <li class="p-index_items"><a href="#news">・News</a></li>
+            <li class="p-index_items"><a href="/about#sec04">・About section04</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="p-section p-secAccordion" id="accordion">
+      <div class="l-inner">
+        <div class="c-secTitle js-fadeIn">
+          <h2 class="c-secTitle__en">Accrodion</h2>
+          <p class="c-secTitle__ja">アコーディオン</p>
+        </div>
+        <div class="p-accordionWrap">
+          <ul class="p-accordion_list">
+            <li class="p-accordion_items">
+              <details class="p-accordion js-details">
+                <summary class="p-accordion__Q js-summary">
+                  <span class="p-accordion_QInner">
+                    <span>Q. 質問の内容をここに入れる</span>
+                    <span class="p-accordion__icon"></span>
+                  </span>
+                </summary>
+                <div class="p-accordion__contentWrap js-content">
+                  <div class="p-accordion__contentInner">
+                    <p>A. 質問の答えをここに入れる</p>
+                  </div>
+                </div>
+              </details>
+            </li>
+            <li class="p-accordion_items">
+              <details class="p-accordion js-details">
+                <summary class="p-accordion__Q js-summary">
+                  <span class="p-accordion_QInner">
+                    <span>Q. 質問の内容をここに入れる</span>
+                    <span class="p-accordion__icon"></span>
+                  </span>
+                </summary>
+                <div class="p-accordion__contentWrap js-content">
+                  <div class="p-accordion__contentInner">
+                    <p>A. 質問の答えをここに入れる</p>
+                  </div>
+                </div>
+              </details>
+            </li>
+            <li class="p-accordion_items">
+              <details class="p-accordion js-details">
+                <summary class="p-accordion__Q js-summary">
+                  <span class="p-accordion_QInner">
+                    <span>Q. 質問の内容をここに入れる</span>
+                    <span class="p-accordion__icon"></span>
+                  </span>
+                </summary>
+                <div class="p-accordion__contentWrap js-content">
+                  <div class="p-accordion__contentInner">
+                    <p>A. 質問の答えをここに入れる</p>
+                  </div>
+                </div>
+              </details>
+            </li>
+            <li class="p-accordion_items">
+              <details class="p-accordion js-details">
+                <summary class="p-accordion__Q js-summary">
+                  <span class="p-accordion_QInner">
+                    <span>Q. 質問の内容をここに入れる</span>
+                    <span class="p-accordion__icon"></span>
+                  </span>
+                </summary>
+                <div class="p-accordion__contentWrap js-content">
+                  <div class="p-accordion__contentInner">
+                    <p>A. 質問の答えをここに入れる</p>
+                  </div>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="p-section p-secPrologue" id="prologue">
+      <div class="l-inner">
+        <div class="c-secTitle js-fadeIn">
+          <h2 class="c-secTitle__en">Prologue</h2>
+          <p class="c-secTitle__ja">プロローグ</p>
+        </div>
 
-  <section class="sec02" id="sec02">
-    <div class="l-inner">
-      <h1>Section02</h1>
-    </div>
-  </section>
-  <section class="sec03" id="sec03">
-    <div class="l-inner">
-      <h1>Section03</h1>
-    </div>
-  </section>
-  <section class="sec04" id="sec04">
-    <div class="l-inner">
-      <h1>Section04</h1>
-    </div>
-  </section>
+        <div class="p-secPrologue__body">
+          <div class="p-secPrologue__img">
+            <img
+              src="./assets/images/img01.webp"
+              data-srcset="./assets/images/img01@2x.webp 2x, ./assets/images/img01.webp 1x"
+              alt="海に沈む夕日"
+            />
+          </div>
+          <div class="p-secPrologue__contents">
+            <h3 class="p-secPrologue__catch">サービスの特色</h3>
+            <p class="p-secPrologue__desc">
+              このサービスの特色は他社と比較して、早く、安全です。お客様は使い心地が良く、安全にご利用していただけます。
+              このサービスの特色は他社と比較して、早く、安全です。お客様は使い心地が良く、安全にご利用していただけます。
+            </p>
+            <div class="p-secPrologue_btnWrap">
+              <a href="/about/" class="c-button p-secPrologue_btn">詳しくはこちら</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-section p-secCards" id="cards">
+      <div class="l-inner">
+        <div class="c-secTitle js-fadeIn">
+          <h2 class="c-secTitle__en">Cards</h2>
+          <p class="c-secTitle__ja">カード</p>
+        </div>
 
-  <div class="c-toTop">
-    <a href="#" class="c-toTop__text">TOP</a>
-  </div>
-</body>
+        <div class="p-secCards__body">
+          <ul class="p-secCards__cards">
+            <li class="c-card p-secCards_card">
+              <a href="/about/" class="c-card__link">
+                <div class="c-card__img">
+                  <img
+                    src="./assets/images/img01.webp"
+                    data-srcset="./assets/images/img01@2x.webp 2x, ./assets/images/img01.webp 1x"
+                    alt="海に沈む夕日"
+                  />
+                </div>
+                <div class="c-card__body">
+                  <h3 class="c-card__title">カードのタイトル</h3>
+                  <p class="c-card__excerpt">ここにカードの説明が入ります。</p>
+                  <div class="c-card_tagsWrap">
+                    <ul class="c-card__tags">
+                      <li class="c-card__tag c-tag"><span>#index</span></li>
+                      <li class="c-card__tag c-tag"><span>#accordion</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="c-card p-secCards_card">
+              <a href="/about/" class="c-card__link">
+                <div class="c-card__img">
+                  <img
+                    src="./assets/images/img01.webp"
+                    data-srcset="./assets/images/img01@2x.webp 2x, ./assets/images/img01.webp 1x"
+                    alt="海に沈む夕日"
+                  />
+                </div>
+                <div class="c-card__body">
+                  <h3 class="c-card__title">カードのタイトル</h3>
+                  <p class="c-card__excerpt">ここにカードの説明が入りますここにカードの説明が入ります。ここにカードの説明が入ります。</p>
+                  <div class="c-card_tagsWrap">
+                    <ul class="c-card__tags">
+                      <li class="c-card__tag c-tag"><span>#accordion</span></li>
+                      <li class="c-card__tag c-tag"><span>#prologue</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="c-card p-secCards_card">
+              <a href="/about/" class="c-card__link">
+                <div class="c-card__img">
+                  <img
+                    src="./assets/images/img01.webp"
+                    data-srcset="./assets/images/img01@2x.webp 2x, ./assets/images/img01.webp 1x"
+                    alt="海に沈む夕日"
+                  />
+                </div>
+                <div class="c-card__body">
+                  <h3 class="c-card__title">カードのタイトル</h3>
+                  <p class="c-card__excerpt">ここにカードの説明が入りますここにカードの説明が入ります。ここにカードの説明が入ります。</p>
+                  <div class="c-card_tagsWrap">
+                    <ul class="c-card__tags">
+                      <li class="c-card__tag c-tag"><span>#prologue</span></li>
+                      <li class="c-card__tag c-tag"><span>#cards</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="p-section p-secNews" id="news">
+      <div class="l-inner">
+        <div class="c-secTitle js-fadeIn">
+          <h2 class="c-secTitle__en">News</h2>
+          <p class="c-secTitle__ja">ニュース</p>
+        </div>
+        <div class="p-secNews__body">
+          <ol class="c-newsList">
+            <li class="c-newsList__items">
+              <a href="#news" class="c-newsList__link">
+                <div class="c-newsList__meta">
+                  <time class="c-newsList__date" datetime="2022-01-01">2022.01.01</time>
+                  <span class="c-newsList__cat">お知らせ</span>
+                </div>
+                <h3 class="c-newsList__title">明けましておめでとうございます！</h3>
+              </a>
+            </li>
+            <li class="c-newsList__items">
+              <a href="#news" class="c-newsList__link">
+                <div class="c-newsList__meta">
+                  <time class="c-newsList__date" datetime="2022-01-01">2022.01.01</time>
+                  <span class="c-newsList__cat">お知らせ</span>
+                </div>
+                <h3 class="c-newsList__title">明けましておめでとうございます！明けましておめでとうございます！明けましておめでとうございます！明けましておめでとうございます！</h3>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p style="font-size: 60px; text-align: center">フッター</p>
+    </footer>
+
+    <div class="c-toTop">
+      <a href="#" class="c-toTop__text">TOP</a>
+    </div>
+  </body>
 </html>

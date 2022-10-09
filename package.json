@@ -36,6 +36,7 @@
   ],
   "private": true,
   "dependencies": {
-    "postcss-normalize-charset": "^5.1.0"
+    "postcss-normalize-charset": "^5.1.0",
+    "swiper": "^8.4.3"
   }
 }

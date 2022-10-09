@@ -1,0 +1,11 @@
+@use '../global/setting' as *;
+
+.c-tag {
+  
+  span {
+    background: #ddd;
+    display: inline-block;
+    font-size: rem(14);
+    padding: 4px 8px;
+  }
+}

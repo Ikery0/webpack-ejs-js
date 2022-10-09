@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 5;
 }
 
 .p-header {
@@ -18,7 +19,7 @@
 }
 
 .p-headerNav {
-  @include mq('lg'){
+  @include mq('md'){
     display: none;
   }
 }

@@ -382,7 +382,13 @@ details {
  */
 
 summary {
-  display: list-item;
+  display: block;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  /* Safariで表示されるデフォルトの三角形アイコンを消します */
+  display: none;
 }
 
 /*

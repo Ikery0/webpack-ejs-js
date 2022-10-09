@@ -1,6 +1,7 @@
 'use strict'
+
 export class ScrollObserver {
-  constructor(els, method, options) {
+  constructor(els, cb, options) {
     this.els= document.querySelectorAll(els);
     const defaultOptions = {
       root: null,
@@ -8,7 +9,7 @@ export class ScrollObserver {
       threshold: 0,
       once: true,
     }
-    this.method = method;
+    this.cb = cb;
     this.options = Object.assign(defaultOptions, options);
     this.once = this.options.once;
     this._init();
@@ -18,12 +19,12 @@ export class ScrollObserver {
     const callback = (entries, observer)=> {
       entries.forEach(entry=> {
         if (entry.isIntersecting) {
-          this.method(entry.target, entry.isIntersecting);
+          this.cb(entry.target, true);
           if(this.once) {
             observer.unobserve(entry.target);
           }
         } else {
-          this.method(entry.target, entry.isIntersecting);
+          this.cb(entry.target, false);
         }
       });
     }

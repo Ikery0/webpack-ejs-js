@@ -1,30 +1,33 @@
-'use strict'
+'use strict';
 
 export class BgFix {
-  constructor() {
-    this.scrollY = 0;
-    this.styles = {
+  on() {
+    const scrollY = this._getScrollElement().scrollTop;
+    const styles = {
       height: '100vh',
       position: 'fixed',
-      top: `${this.scrollY * -1}px`,
+      top: `${scrollY * -1}px`,
       left: '0',
       width: '100vw',
-    }
-  }
+    };
 
-  on() {
-    this.scrollY = this._getScrollElement().scrollTop;
-
-    Object.keys(this.styles).forEach((key) => {
-      document.body.style[key] = this.styles[key];
+    Object.keys(styles).forEach((key) => {
+      document.body.style[key] = styles[key];
     });
   }
 
   off() {
-    this.scrollY = parseInt(document.body.style.top || '0');
+    const scrollY = parseInt(document.body.style.top || '0');
+    const styles = {
+      height: '',
+      position: '',
+      top: '',
+      left: '',
+      width: '',
+    };
 
-    Object.keys(this.styles).forEach((key) => {
-      document.body.style[key] = '';
+    Object.keys(styles).forEach((key) => {
+      document.body.style[key] = styles[key];
     });
 
     window.scrollTo(0, scrollY * -1);

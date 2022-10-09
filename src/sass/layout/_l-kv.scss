@@ -1,0 +1,14 @@
+@use '../global/setting' as *;
+
+.l-kv {
+  
+  .swiper-slide {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 60px;
+  }
+}

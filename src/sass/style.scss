@@ -1,7 +1,10 @@
 @use 'global/**/*' as *;
 @use 'foundation/**/*' as *;
+@use 'plugin/**/*' as *;
 @use 'layout/**/*' as *;
+@use 'project/**/*' as *;
 @use 'components/**/*' as *;
+@use 'utility/**/*' as *;
 
 
 body {
@@ -20,9 +23,10 @@ img {
 
 
 h1 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
 }
+
 
 .p-sec01__accordion {
   margin-top: 40px;
