@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 //iosの100vhに対応
 export class FitHeight {
   constructor() {
     this._addEvent();
-    this.windowHeight = window.innerHeight
+    this.windowHeight = window.innerHeight;
   }
 
   _set() {
@@ -12,16 +12,18 @@ export class FitHeight {
   }
 
   _checkHeight() {
-    if (this.windowHeight === window.innerHeight) {
-      return false
+    const currentHeight = window.innerHeight;
+    if (this.windowHeight === currentHeight) {
+      return;
     }
 
-   this._set()
+    this.windowHeight === currentHeight;
+    this._set();
   }
 
   _addEvent() {
-    this._set()
-    const that = this
-    window.addEventListener('resize', that._checkHeight.bind(this))
+    this._set();
+    const that = this;
+    window.addEventListener('resize', that._checkHeight.bind(this));
   }
 }
