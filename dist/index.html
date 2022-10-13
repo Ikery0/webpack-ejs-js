@@ -5,7 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script defer src="./assets/js/_utils/swiper.bundle.min.js"></script>
     <script defer src="./assets/js/index.js"></script>
     <title>webpack-ejs-js</title>
   </head>
@@ -35,8 +34,7 @@
     </button>
   </div>
 </header>
- 
-    <div class="l-spMenu js-spNav" id="navigation" aria-hidden="true">
+ <div class="l-spMenu js-spNav" id="navigation" aria-hidden="true">
   <nav class="p-spNav">
     <ul class="p-spNav__list">
       <li class="p-spNav__listItems">
@@ -48,13 +46,7 @@
     </ul>
     <div id="js-navTrap" tabindex="0"></div>
   </nav>
-</div>
-
-    <div class="kv">
-      <p class="kv__text">100vh</p>
-    </div>
-
-    <div class="l-kv">
+</div> <div class="l-kv">
   <!-- Slider main container -->
   <div class="swiper" id="js-kvSwiper">
     <!-- Additional required wrapper -->
@@ -64,19 +56,19 @@
       <div class="swiper-slide">Slide 2</div>
       <div class="swiper-slide">Slide 3</div>
     </div>
-    <!-- If we need pagination -->
+    
+    <button type="button" class="swiper-button-prev"></button>
+    <button type="button" class="swiper-button-next"></button>
+
     <div class="swiper-pagination"></div>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
   </div>
 </div>
- 
+
 
     <section class="p-section p-secIndex">
       <div class="l-inner">
-        <div class="c-secTitle">
+        <div class="c-secTitle js-fadeIn">
           <h2 class="c-secTitle__en">Index</h2>
           <p class="c-secTitle__ja">目次</p>
         </div>
@@ -93,7 +85,7 @@
     </section>
     <section class="p-section p-secAccordion" id="accordion">
       <div class="l-inner">
-        <div class="c-secTitle">
+        <div class="c-secTitle js-fadeIn">
           <h2 class="c-secTitle__en">Accrodion</h2>
           <p class="c-secTitle__ja">アコーディオン</p>
         </div>
@@ -161,43 +153,11 @@
             </li>
           </ul>
         </div>
-        <!-- <dl class="p-accordion p-sec01__accordion">
-        <dt class="p-accordion__Q">
-          <button class="p-accordion__QButton js-accoTrigger">
-            <span class="p-accordion__Qtext">1. Question01</span>
-          </button>
-        </dt>
-        <dd class="p-accordion__A js-accoTarget" aria-hidden="true">
-          <p class="p-accordion__ATitle">Answer</p>
-          <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
-            is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
-        </dd>
-        <dt class="p-accordion__Q">
-          <button class="p-accordion__QButton js-accoTrigger">
-            <span class="p-accordion__Qtext">2. Question02</span>
-          </button>
-        </dt>
-        <dd class="p-accordion__A js-accoTarget" aria-hidden="true">
-          <p class="p-accordion__ATitle">Answer</p>
-          <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
-            is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
-        </dd>
-        <dt class="p-accordion__Q">
-          <button class="p-accordion__QButton js-accoTrigger">
-            <span class="p-accordion__Qtext">3. Question03</span>
-          </button>
-        </dt>
-        <dd class="p-accordion__A js-accoTarget" aria-hidden="true">
-          <p class="p-accordion__ATitle">Answer</p>
-          <p class="p-accordion__AText">this is the answer.this is the answer.this is the answer.this is the answer.this
-            is the answer.this is the answer.this is the answer.this is the answer.this is the answer.</p>
-        </dd>
-      </dl> -->
       </div>
     </section>
     <section class="p-section p-secPrologue" id="prologue">
       <div class="l-inner">
-        <div class="c-secTitle">
+        <div class="c-secTitle js-fadeIn">
           <h2 class="c-secTitle__en">Prologue</h2>
           <p class="c-secTitle__ja">プロローグ</p>
         </div>
@@ -225,7 +185,7 @@
     </section>
     <section class="p-section p-secCards" id="cards">
       <div class="l-inner">
-        <div class="c-secTitle">
+        <div class="c-secTitle js-fadeIn">
           <h2 class="c-secTitle__en">Cards</h2>
           <p class="c-secTitle__ja">カード</p>
         </div>
@@ -301,15 +261,37 @@
     </section>
     <section class="p-section p-secNews" id="news">
       <div class="l-inner">
-        <div class="c-secTitle">
+        <div class="c-secTitle js-fadeIn">
           <h2 class="c-secTitle__en">News</h2>
           <p class="c-secTitle__ja">ニュース</p>
+        </div>
+        <div class="p-secNews__body">
+          <ol class="c-newsList">
+            <li class="c-newsList__items">
+              <a href="#news" class="c-newsList__link">
+                <div class="c-newsList__meta">
+                  <time class="c-newsList__date" datetime="2022-01-01">2022.01.01</time>
+                  <span class="c-newsList__cat">お知らせ</span>
+                </div>
+                <h3 class="c-newsList__title">明けましておめでとうございます！</h3>
+              </a>
+            </li>
+            <li class="c-newsList__items">
+              <a href="#news" class="c-newsList__link">
+                <div class="c-newsList__meta">
+                  <time class="c-newsList__date" datetime="2022-01-01">2022.01.01</time>
+                  <span class="c-newsList__cat">お知らせ</span>
+                </div>
+                <h3 class="c-newsList__title">明けましておめでとうございます！明けましておめでとうございます！明けましておめでとうございます！明けましておめでとうございます！</h3>
+              </a>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
     <footer>
-      <p style="font-size: 60px; text-align: center;">フッター</p>
+      <p style="font-size: 60px; text-align: center">フッター</p>
     </footer>
 
     <div class="c-toTop">
