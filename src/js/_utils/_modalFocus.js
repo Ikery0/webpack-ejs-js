@@ -1,4 +1,5 @@
 'use strict';
+//参考：https://ics.media/entry/220620/
 
 const createInteractiveElArray = (parentElement) => {
   const interactiveItems = parentElement.querySelectorAll('button, a');
@@ -35,44 +36,41 @@ export const modalFocus = (event, parentElement) => {
     return;
   }
 
-  console.log(event.key);
-  switch (event.key) {
-    case 'Tab': {
-      // モーダル画面内にフォーカスが当たっているか検証
-      const interactiveElArray = createInteractiveElArray(parentElement);
-      const focusIndex = interactiveElArray.findIndex((el) => el === document.activeElement);
+  if (event.key !== 'Tab') {
+    return;
+  }
 
-      //フォーカス可能な要素が1つしかない場合、その要素のみフォーカス
-      if (interactiveElArray.length === 1) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        focusToButton(parentElement, true);
-        break;
-      }
+  // モーダル画面内にフォーカスが当たっているか検証
+  const interactiveElArray = createInteractiveElArray(parentElement);
+  const focusIndex = interactiveElArray.findIndex((el) => el === document.activeElement);
 
-      if (focusIndex === 0) {
-        //最初の要素にfocueが当たっていて、shift + tabが押された時
-        if (event.shiftKey) {
-          event.preventDefault();
-          event.stopImmediatePropagation();
+  //フォーカス可能な要素が1つしかない場合、その要素のみフォーカス
+  if (interactiveElArray.length === 1) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    focusToButton(parentElement, true);
+  }
 
-          focusToButton(parentElement, false);
-        }
-      }
-      if (focusIndex >= interactiveElArray.length - 1) {
-        // 最後の要素にfocueが当たっていて、tabを押された時
-        if (!event.shiftKey) {
-          event.preventDefault();
-          event.stopImmediatePropagation();
+  if (focusIndex === 0) {
+    //最初の要素にfocueが当たっていて、shift + tabが押された時
+    if (event.shiftKey) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
 
-          focusToButton(parentElement, true);
-        }
-      }
-      //画面外の要素にフォーカスがあたっていたら1番目の要素にフォーカスをあてる
-      if (focusIndex === -1) {
-        focusToButton(parentElement, true);
-      }
-      break;
+      focusToButton(parentElement, false);
     }
+  }
+  if (focusIndex >= interactiveElArray.length - 1) {
+    // 最後の要素にfocueが当たっていて、tabを押された時
+    if (!event.shiftKey) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      focusToButton(parentElement, true);
+    }
+  }
+  //画面外の要素にフォーカスがあたっていたら1番目の要素にフォーカスをあてる
+  if (focusIndex === -1) {
+    focusToButton(parentElement, true);
   }
 };
