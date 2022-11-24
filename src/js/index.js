@@ -25,10 +25,12 @@ class Main {
       hamburger: 'js-hamburger',
       menu: 'js-spNav',
       CLASS: 'is-active',
-      focusTrap: 'js-navTrap',
     });
     new OtherPageSmoothScroll();
-    new Accordion();
+    new Accordion({
+      details: '.js-details',
+      content: '.js-content',
+    });
   }
 
   _scrollInit() {

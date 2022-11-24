@@ -1,14 +1,14 @@
 'use strict';
 import { BgFix } from './_bgFix';
 import { modalFocus } from './_modalFocus';
-/*
-{
-  hamburger: hamburger btn id, 
-  menu: navigation class,
-  CLASS: class name what you wanna add,
-  focusTrap: focus trap id,
-}
-*/
+/**
+ * @param {Object} obj
+ * @param {Object} obj.hamburger hamburger btn id
+ * @param {Object} obj.menu navigation class
+ * @param {Object} obj.CLASS class name what you wanna add,
+ *
+ */
+
 export class Drawer {
   constructor(obj) {
     this.DOM = {};

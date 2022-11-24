@@ -1,9 +1,16 @@
 'use strict';
+/**
+ * @param {Object} obj detalisのクラスなどの情報をまとめる
+ * @param {Object} obj.details detailsタグ
+ * @param {Object} obj.content detailのコンテンツ
+ *
+ */
 
 export class Accordion {
-  constructor() {
+  constructor(obj) {
     this.DOM = {};
-    this.DOM.details = document.querySelectorAll('.js-details');
+    this.DOM.details = document.querySelectorAll(obj.details);
+    this.CONTENT_CLASS = obj.content;
     this.RUNNING_VALUE = 'running'; // アニメーション実行中のときに付与する予定のカスタムデータ属性の値
     this.IS_OPENED_CLASS = 'is-open'; // アイコン操作用のクラス名
 
@@ -45,23 +52,23 @@ export class Accordion {
 
   _addEvent() {
     this.DOM.details.forEach((detail) => {
-      const summary = detail.querySelector('.js-summary');
-      const content = detail.querySelector('.js-content');
-      
+      const summary = detail.querySelector('summary');
+      const content = detail.querySelector(this.CONTENT_CLASS);
+
       summary.addEventListener('click', (event) => {
         event.preventDefault();
-        
+
         // 連打防止用。アニメーション中だったらクリックイベントを受け付けないでリターンする
         if (detail.dataset.animStatus === this.RUNNING_VALUE) {
           return;
         }
-        
+
         // アニメーションを実行
-        detail.open ? this._close(detail, content) : this._open(detail, content)
+        detail.open ? this._close(detail, content) : this._open(detail, content);
       });
     });
   }
-  
+
   _open(detail, content) {
     detail.classList.toggle(this.IS_OPENED_CLASS);
     detail.setAttribute('open', 'true');
