@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 //ページ内だけの時はSmoothScroll
 //ページ外も対応したい時はOtherPageSmoothScroll
 export class SmoothScroll {
@@ -8,10 +8,10 @@ export class SmoothScroll {
     this.DOM.targets = document.querySelectorAll('a[href^="#"]');
     this.animateOpt = {
       speed: 600,
-      easing: 'easeOut'
-    }
+      easing: 'easeOut',
+    };
 
-    this._addEvent()
+    this._addEvent();
   }
 
   easing(t, b, c, d) {
@@ -29,12 +29,12 @@ export class SmoothScroll {
         break;
 
       case 'easeInOut':
-        if ((t /= d / 2) < 1) return c / 2 * t * t + b;
-        return -c / 2 * ((--t) * (t - 2) - 1) + b;
+        if ((t /= d / 2) < 1) return (c / 2) * t * t + b;
+        return (-c / 2) * (--t * (t - 2) - 1) + b;
         break;
 
       default:
-        alert('options.easingに正しい値を入れてください');
+        console.error('options.easingに正しい値を入れてください');
         break;
     }
   }
@@ -42,8 +42,8 @@ export class SmoothScroll {
   animationFrame(startTime, startY, stopY) {
     const that = this;
     const callBack = () => {
-      that.animate(startTime, startY, stopY)
-    }
+      that.animate(startTime, startY, stopY);
+    };
     requestAnimationFrame(callBack.bind(this));
   }
 
@@ -63,7 +63,7 @@ export class SmoothScroll {
     window.scrollTo(
       0,
       //「アニメーションの経過時間」,「始点」,「変化量」,「変化にかける時間」
-      this.easing(elapsedTime, startY, stopY, this.animateOpt.speed)
+      this.easing(elapsedTime, startY, stopY, this.animateOpt.speed),
     );
 
     this.animationFrame(startTime, startY, stopY);
@@ -86,8 +86,14 @@ export class SmoothScroll {
     const href = $target.getAttribute('href');
     const scrollStopTarget = document.querySelector(href == '#' || href == '' ? 'html' : href);
 
+    if (!scrollStopTarget) {
+      console.error('スクロール先が見つかりません');
+      this.DOM.body.classList.remove('is-scroll-busy');
+      return;
+    }
+
     //headerの高さの余白
-    const headerHeight = document.querySelector('header').clientHeight
+    const headerHeight = document.querySelector('header').clientHeight;
     //スクロール先の遷移先のtopのy座標
     const stopY = scrollStopTarget.getBoundingClientRect().top - headerHeight;
 
@@ -98,16 +104,16 @@ export class SmoothScroll {
   }
 
   _addEvent() {
-    const that = this
-    this.DOM.targets.forEach(el => {
+    const that = this;
+    this.DOM.targets.forEach((el) => {
       el.addEventListener('click', (e) => that._getArg(e));
-    })
+    });
   }
 }
 
 export class OtherPageSmoothScroll extends SmoothScroll {
   constructor() {
-    super()
+    super();
     this._start();
   }
 
@@ -118,8 +124,9 @@ export class OtherPageSmoothScroll extends SmoothScroll {
     if (urlHash) {
       setTimeout(() => {
         window.scrollTo({ top: 0 }, 0);
-      })
-      setTimeout(() => {  //ペー,ジロード用に処理を遅らす
+      });
+      setTimeout(() => {
+        //ペー,ジロード用に処理を遅らす
         // スクロール先の要素を取得 （アンカーの リンク先 _.. の _ を取り除いた名前と一致する id名の要素）
         const urlTarget = document.getElementById(urlHash.replace('#', ''));
 
@@ -127,7 +134,7 @@ export class OtherPageSmoothScroll extends SmoothScroll {
         const startY = window.pageYOffset || document.documentElement.scrollTop;
 
         //headerの高さの余白
-        const headerHeight = document.querySelector('header').clientHeight
+        const headerHeight = document.querySelector('header').clientHeight;
         //スクロール先の遷移先のtopのy座標
         const stopY = urlTarget.getBoundingClientRect().top - headerHeight;
 
