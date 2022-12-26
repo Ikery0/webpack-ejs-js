@@ -11,9 +11,9 @@ export class BgFix {
       width: '100vw',
     };
 
-    Object.keys(styles).forEach((key) => {
+    for (const key in styles) {
       document.body.style[key] = styles[key];
-    });
+    }
   }
 
   off() {
@@ -26,9 +26,9 @@ export class BgFix {
       width: '',
     };
 
-    Object.keys(styles).forEach((key) => {
+    for (const key in styles) {
       document.body.style[key] = styles[key];
-    });
+    }
 
     window.scrollTo(0, scrollY * -1);
   }
