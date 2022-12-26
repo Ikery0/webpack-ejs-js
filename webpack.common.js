@@ -8,9 +8,9 @@ const webpackConfig = (MODE) => {
 
   //ベースファイルのパス設定
   const srcPaths = {
-    js: `${__dirname}/src/js/`,
+    js: `${__dirname}/src/assets/js/`,
     ejs: `${__dirname}/src/ejs/`,
-    sass: `${__dirname}/src/sass/`,
+    sass: `${__dirname}/src/assets/sass/`,
   };
 
   //ejsビルド
@@ -118,7 +118,7 @@ const webpackConfig = (MODE) => {
               loader: 'css-loader',
               options: {
                 // オプションでCSS内のurl()メソッドを取り込む
-                url: true,
+                url: false,
                 // ソースマップの利用有無
                 sourceMap: enabledSourceMap,
   
@@ -161,38 +161,38 @@ const webpackConfig = (MODE) => {
         },
   
         //CSS内の画像読み込み設定
-        {
-          test: /\.(gif|png|jpg|svg|webp)$/,
-          // 閾値以上だったら埋め込まずファイルとして分離する
-          type: 'asset',
-          parser: {
-            dataUrlCondition: {
-              // 4KB以上だったら埋め込まずファイルとして分離する
-              maxSize: 4 * 1024,
-            },
-          },
-          //書き出し設定
-          generator: {
-            filename: 'assets/images/[name][ext]',
-          },
-        },
+        // {
+        //   test: /\.(gif|png|jpg|svg|webp)$/,
+        //   // 閾値以上だったら埋め込まずファイルとして分離する
+        //   type: 'asset',
+        //   parser: {
+        //     dataUrlCondition: {
+        //       // 4KB以上だったら埋め込まずファイルとして分離する
+        //       maxSize: 4 * 1024,
+        //     },
+        //   },
+        //   //書き出し設定
+        //   generator: {
+        //     filename: 'assets/images/[name][ext]',
+        //   },
+        // },
   
         //CSS内のWebfont読み込み設定
-        {
-          test: /\.(ttf|otf|eot|woff|woff2)$/,
-          // 閾値以上だったら埋め込まずファイルとして分離する
-          type: 'asset',
-          parser: {
-            dataUrlCondition: {
-              // 4KB以上だったら埋め込まずファイルとして分離する
-              maxSize: 4 * 1024,
-            },
-          },
-          //書き出し設定
-          generator: {
-            filename: 'assets/fonts/[name][ext]',
-          },
-        },
+        // {
+        //   test: /\.(ttf|otf|eot|woff|woff2)$/,
+        //   // 閾値以上だったら埋め込まずファイルとして分離する
+        //   type: 'asset',
+        //   parser: {
+        //     dataUrlCondition: {
+        //       // 4KB以上だったら埋め込まずファイルとして分離する
+        //       maxSize: 4 * 1024,
+        //     },
+        //   },
+        //   //書き出し設定
+        //   generator: {
+        //     filename: 'assets/fonts/[name][ext]',
+        //   },
+        // },
       ],
     },
   
