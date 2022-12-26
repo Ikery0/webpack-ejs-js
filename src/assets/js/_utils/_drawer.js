@@ -14,7 +14,6 @@ export class Drawer {
     this.DOM = {};
     this.DOM.hamburger = document.getElementById(obj.hamburger);
     this.DOM.menu = document.querySelector(`.${obj.menu}`);
-    // this.DOM.focusTrap = document.getElementById(obj.focusTrap);
     this.CLASS = obj.CLASS;
     this.flg = false;
     this.bgFix = new BgFix();
@@ -36,7 +35,7 @@ export class Drawer {
     });
 
     window.addEventListener('resize', () => {
-      if (window.matchMedia('(min-width: 768px)').matches && that.flg) this._close();
+      if (window.matchMedia('(max-width: 768px)').matches && this.flg) this._close();
     });
   }
 
