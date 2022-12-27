@@ -2,26 +2,27 @@
 /**
  * @param {number} elapsed 経過時間
  * @param {number} start 開始点
- * @param {number}
+ * @param {number} destination 終了点
+ * @param {number} duration 変化にかける時間
  */
 export class Easing {
-  easeOut(t, b, c, d) {
-    return -c * (t /= d) * (t - 2) + b;
+  easeOut(elapsed, start, destination, duration) {
+    return -destination * (elapsed /= duration) * (elapsed - 2) + start;
   }
 
-  easeIn(t, b, c, d) {
-    return c * (t /= d) * t + b;
+  easeIn(elapsed, start, destination, duration) {
+    return destination * (elapsed /= duration) * elapsed + start;
   }
 
-  easeInOut(t, b, c, d) {
-    if ((t /= d / 2) < 1) {
-      return (c / 2) * t * t + b;
+  easeInOut(elapsed, start, destination, duration) {
+    if ((elapsed /= duration / 2) < 1) {
+      return (destination / 2) * elapsed * elapsed + start;
     }
 
-    return (-c / 2) * (--t * (t - 2) - 1) + b;
+    return (-destination / 2) * (--elapsed * (elapsed - 2) - 1) + start;
   }
 
-  swing() {
-    return c * (0.5 - Math.cos((t / d) * Math.PI) / 2) + b;
+  swing(elapsed, start, destination, duration) {
+    return destination * (0.5 - Math.cos((elapsed / duration) * Math.PI) / 2) + start;
   }
 }
