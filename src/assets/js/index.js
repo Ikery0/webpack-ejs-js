@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.js-spNav');
   const bgFix = new BgFix();
   const ADD_CLASS = 'is-active';
+
   const toggleMenu = () => {
     const hasIsActive = menu.classList.contains('is-active');
     if (!hasIsActive) {
@@ -20,22 +21,26 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     menuClose();
   };
+
   const menuOpen = () => {
     menu.classList.add(ADD_CLASS);
     humBtn.classList.add(ADD_CLASS);
     bgFix.on();
   };
+
   const menuClose = () => {
     menu.classList.remove(ADD_CLASS);
     humBtn.classList.remove(ADD_CLASS);
     bgFix.off();
   };
+
   const resizeMenu = () => {
     const isPc = window.innerWidth > 768;
     if (isPc) {
       menuClose();
     }
   };
+
   humBtn.addEventListener('click', toggleMenu);
   window.addEventListener('resize', resizeMenu);
 });
