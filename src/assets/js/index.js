@@ -1,50 +1,41 @@
 'use strict';
-import { FitHeight } from './_utils/_fitHeight.js';
-import { Drawer } from './_utils/_drawer.js';
-import { OtherPageSmoothScroll } from './_utils/_smoothScroll.js';
-import { Accordion } from './_utils/_accordion.js';
-import { HeroSloder } from './_utils/_Heroslide.js';
-import { ScrollObserver } from './_utils/_scroll';
+
+import { BgFix } from './_utils/_bgFix';
 
 window.addEventListener('DOMContentLoaded', () => {
-  new Main();
+  //ハンバーガボタンクリック
+  //メニューが'is-acive'を持っているか
+  //持ってなかったら開く関数を実行
+  //持ってなかったら閉じる関数を実行
+
+  const humBtn = document.querySelector('#js-hamburger');
+  const menu = document.querySelector('.js-spNav');
+  const bgFix = new BgFix();
+  const ADD_CLASS = 'is-active';
+  const toggleMenu = () => {
+    const hasIsActive = menu.classList.contains('is-active');
+    if (!hasIsActive) {
+      menuOpen();
+      return;
+    }
+    menuClose();
+  };
+  const menuOpen = () => {
+    menu.classList.add(ADD_CLASS);
+    humBtn.classList.add(ADD_CLASS);
+    bgFix.on();
+  };
+  const menuClose = () => {
+    menu.classList.remove(ADD_CLASS);
+    humBtn.classList.remove(ADD_CLASS);
+    bgFix.off();
+  };
+  const resizeMenu = () => {
+    const isPc = window.innerWidth > 768;
+    if (isPc) {
+      menuClose();
+    }
+  };
+  humBtn.addEventListener('click', toggleMenu);
+  window.addEventListener('resize', resizeMenu);
 });
-
-class Main {
-  constructor() {
-    this.heroSlider = new HeroSloder('#js-kvSwiper');
-    this._observers = [];
-
-    this._scrollInit();
-    this._init();
-  }
-
-  _init() {
-    new FitHeight();
-    new Drawer({
-      hamburger: 'js-hamburger',
-      menu: 'js-spNav',
-      CLASS: 'is-active',
-    });
-    new OtherPageSmoothScroll();
-    new Accordion({
-      details: '.js-details',
-      content: '.js-content',
-    });
-  }
-
-  _scrollInit() {
-    this._observers.push(
-      new ScrollObserver('#js-kvSwiper', this._toggleAnimation.bind(this), { once: false }),
-      new ScrollObserver('.js-fadeIn', this._fadeIn, { rootMargin: '-100px 0px -100px 0px' }),
-    );
-  }
-
-  _toggleAnimation(el, inview) {
-    inview ? this.heroSlider.start() : this.heroSlider.stop();
-  }
-
-  _fadeIn(el, inview) {
-    inview ? el.classList.add('u-fadeIn') : el.classList.remove('u-fadeIn');
-  }
-}
