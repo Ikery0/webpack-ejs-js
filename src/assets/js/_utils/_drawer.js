@@ -5,7 +5,7 @@ import { modalFocus } from './_modalFocus';
  * @param {Object} obj
  * @param {Object} obj.hamburger hamburger btn id
  * @param {Object} obj.menu navigation class
- * @param {Object} obj.CLASS class name what you wanna add,
+ * @param {Object} obj.CLASS class name you wanna add,
  *
  */
 
